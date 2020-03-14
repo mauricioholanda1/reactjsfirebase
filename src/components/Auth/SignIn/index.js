@@ -5,16 +5,8 @@ import {SignUpLink} from "../SignUp";
 import {PasswordForgetLink} from "../PasswordForget";
 import {withFirebase} from "../../Firebase";
 import * as ROUTES from "../../../constants/routes";
-import {styled} from "@material-ui/core/styles";
-import {
-  Typography,
-  CardContent,
-  CardActions,
-  Card,
-  Container,
-  TextField,
-  Button
-} from "@material-ui/core";
+import {MyCard, MyTitle, MyTextField, MyButton} from "./style";
+import {CardContent, CardActions, Container} from "@material-ui/core";
 
 const INITIAL_STATE = {
   email: "",
@@ -87,24 +79,6 @@ class SignInFormBase extends Component {
     );
   }
 }
-
-const MyCard = styled(Card)({
-  maxWidth: 400
-});
-
-const MyTitle = styled(Typography)({
-  fontSize: 30,
-  textAlign: "center",
-  padding: 10
-});
-
-const MyTextField = styled(TextField)({
-  height: 50,
-  padding: 10,
-  margin: 5
-});
-
-const MyButton = styled(Button)({});
 
 const SignInForm = compose(withRouter, withFirebase)(SignInFormBase);
 export default SignInForm;
